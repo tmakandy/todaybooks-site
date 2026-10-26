@@ -1,0 +1,67 @@
+/* Shared styling for the TodayBooks site. Mirrors the app: the same accent red,
+   serif headings for a bookish feel, and a light/dark pair driven by the visitor's
+   system preference. */
+:root {
+  --accent: #d6292f;
+  --accent-dark: #8f1722;
+  --ink: #1b1b1f;
+  --muted: #5d5d68;
+  --bg: #ffffff;
+  --surface: #f6f5f3;
+  --border: #e3e1dd;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f2f1ef;
+    --muted: #a8a7b0;
+    --bg: #15151a;
+    --surface: #1f1f26;
+    --border: #2e2e38;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+header.site {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+  position: sticky; top: 0;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+}
+header.site .wrap { display: flex; align-items: center; gap: 14px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; color: var(--ink); }
+.brand img { width: 30px; height: 30px; border-radius: 7px; }
+nav { margin-left: auto; display: flex; gap: 18px; }
+nav a { color: var(--muted); text-decoration: none; font-size: 0.93rem; }
+nav a:hover { color: var(--accent); }
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.25; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.7rem); margin: 0 0 14px; }
+h2 { font-size: 1.45rem; margin: 40px 0 12px; }
+h3 { font-size: 1.12rem; margin: 26px 0 8px; }
+.hero { padding: 64px 0 48px; text-align: center; }
+.hero p.lead { font-size: 1.14rem; color: var(--muted); max-width: 54ch; margin: 0 auto 26px; }
+.tag {
+  display: inline-block; background: var(--accent); color: #fff;
+  font-size: 0.72rem; font-weight: 800; letter-spacing: .06em;
+  padding: 5px 11px; border-radius: 999px; margin-bottom: 18px;
+}
+.features { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin: 44px 0; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 13px; padding: 20px; }
+.card h3 { margin-top: 0; }
+.card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+main { padding-bottom: 72px; }
+footer.site { border-top: 1px solid var(--border); padding: 30px 0 48px; color: var(--muted); font-size: 0.88rem; }
+footer.site a { color: var(--muted); }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; display: block; overflow-x: auto; }
+th, td { border: 1px solid var(--border); padding: 9px 12px; text-align: left; vertical-align: top; }
+th { background: var(--surface); }
+code { background: var(--surface); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+.updated { color: var(--muted); font-size: 0.9rem; }
+a { color: var(--accent); }

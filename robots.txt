@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tmakandy.github.io/todaybooks-site/sitemap.xml
