@@ -11,8 +11,14 @@ only, so it can be public without exposing the code.
 | `support.html` | Support page — **required** by App Store Connect |
 | `sitemap.xml`, `robots.txt` | Search indexing |
 | `.nojekyll` | Stops Jekyll from processing the folder |
+| `covers/`, `avatars/` | Catalogue artwork served to the app |
 
 No build step: plain HTML and one stylesheet.
+
+The artwork is **generated**, not stock imagery — `Scripts/generate-artwork.swift` in
+the app repository draws it with CoreGraphics. That avoids image licensing entirely,
+and avoids fabricating photographs of authors who do not exist. Regenerating is
+deterministic: the same catalogue always produces the same files.
 
 ## Published at
 
